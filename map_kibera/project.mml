@@ -19,7 +19,6 @@
     "roads.mss",
     "rail.mss",
     "boundary.mss",
-    "physical.mss",
     "marker.mss"
   ],
   "Layer": [
@@ -79,24 +78,6 @@
       "srs": "",
       "advanced": {},
       "name": "road"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        -164.90347246002037,
-        -52.157728773964294,
-        177.21119225352123,
-        75.79348379113986
-      ],
-      "id": "river",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/jamesconkling/Documents/MapBox/data/natural-earth/10m_physical/ne_10m_rivers_lake_centerlines/ne_10m_rivers_lake_centerlines.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "river"
     },
     {
       "geometry": "point",
@@ -196,45 +177,6 @@
       "srs": "",
       "advanced": {},
       "name": "education"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        36.7059609,
-        -1.351544,
-        36.9001037,
-        -1.2740985
-      ],
-      "id": "road_large",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/jamesconkling/Documents/Projects/ground_truth/map_kibera/project_shp/gqis_extract/lines.shp",
-        "id": "road_large",
-        "project": "map_kibera",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "road_large"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        36.6873858,
-        -1.4304527,
-        36.8614917,
-        -1.2071302
-      ],
-      "id": "secondary-json",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/jamesconkling/Desktop/kibera_secondary.json"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "secondary-json"
     }
   ],
   "scale": 1,

@@ -108,4 +108,3 @@
     [zoom <= 14]{point-transform:"scale(0)";}
     }
 }
-*/

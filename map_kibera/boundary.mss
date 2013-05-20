@@ -4,6 +4,7 @@
 #boundary [boundary = 'administrative']{
   polygon-opacity:1;
   polygon-fill:#f3eded;
+  [zoom = 13]{polygon-fill:orange;}
   [zoom > 16]{line-width: 1.2;}
   [zoom <= 16]{line-width: 1;}
   [zoom <= 14]{line-width: 0.5;}

@@ -98,7 +98,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "religion"
+      "name": "religion",
+      "status": "off"
     },
     {
       "geometry": "point",
@@ -119,7 +120,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "watsan"
+      "name": "watsan",
+      "status": "off"
     },
     {
       "geometry": "point",
@@ -140,7 +142,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "health"
+      "name": "health",
+      "status": "off"
     },
     {
       "geometry": "point",
@@ -158,7 +161,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "security"
+      "name": "security",
+      "status": "off"
     },
     {
       "geometry": "point",
@@ -171,7 +175,10 @@
       "id": "education",
       "class": "",
       "Datasource": {
-        "file": "/Users/jamesconkling/Documents/Projects/ground_truth/map_kibera/project_shp/education-shapefile/education.shp"
+        "file": "/Users/jamesconkling/Documents/Projects/ground_truth/map_kibera/project_shp/education-shapefile/education.shp",
+        "id": "education",
+        "project": "map_kibera",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",

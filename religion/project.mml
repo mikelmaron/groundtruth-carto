@@ -1,0 +1,55 @@
+"kibera"{
+  "bounds": [
+    36.5371,
+    -1.4782,
+    37.1201,
+    -1.1041
+  ],
+  "center": [
+    36.7912,
+    -1.3132,
+    16
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 11,
+  "maxzoom": 18,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "point",
+      "extent": [
+        36.67138684258756,
+        -1.380561532247819,
+        36.99335426935705,
+        -1.1386741378024081
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT osm_id, name, religion, way FROM planet_osm_point WHERE amenity='place_of_worship') AS data",
+        "key_field": "osm_id",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "4082240.11,-153698.28,4118081.36,-126764.97",
+        "dbname": "kibera",
+        "id": "religion",
+        "project": "religion",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "religion",
+      "class": "marker",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "religion"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "Religion",
+  "description": "",
+  "attribution": ""
+}

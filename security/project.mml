@@ -1,0 +1,72 @@
+{
+  "bounds": [
+    36.5371,
+    -1.4782,
+    37.1201,
+    -1.1041
+  ],
+  "center": [
+    36.7912,
+    -1.3132,
+    16
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "",
+    "template_teaser": "ID: {{{osm_id}}} <br>\nNAME: {{{name}}} <br>\nAMENITY: {{{amenity}}} <br>\nSHOP: {{{shop}}} <br>\nSEC_LIGHT: {{{security:light}}} <br>\nSEC_BAR: {{{security:bar}}} <br>\nSEC_HATARI: {{{security:hatari_spot}}} <br>\nSEC_BLACK_SPOT: {{{security:black_spot}}} <br>\nSEC_OTHER: {{{security:other}}} <br>\nSEC_GBV: {{{security:gbv_support}}} <br>\nSEC_CHIEF: {{{security:chiefs_camp}}}",
+    "fields": [
+      "osm_id",
+      "name",
+      "amenity",
+      "shop",
+      "security:light",
+      "security:bar",
+      "security:hatari_spot",
+      "security:black_spot",
+      "security:other",
+      "security:gbv_support",
+      "security:chiefs_camp"
+    ]
+  },
+  "minzoom": 11,
+  "maxzoom": 18,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "point",
+      "extent": [
+        36.67138684258756,
+        -1.380561532247819,
+        36.99335426935705,
+        -1.1386741378024081
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT osm_id, name, amenity, shop, \n\"security:light\", \"security:bar\", \"security:hatari_spot\", \"security:black_spot\", \"security:other\", \"security:gbv_support\", \"security:chiefs_camp\",\nway\nFROM planet_osm_point\nWHERE \"security:light\"='yes' OR \"security:bar\"='yes' OR \"security:hatari_spot\"='yes' OR \"security:black_spot\"='yes' OR \"security:other\"='yes' OR \"security:gbv_support\"='yes' OR \"security:chiefs_camp\"='yes' OR \namenity IN ('bar', 'pub', 'police') OR shop='alcohol')\nAS data",
+        "key_field": "osm_id",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "4082240.11,-153698.28,4118081.36,-126764.97",
+        "dbname": "kibera",
+        "id": "security",
+        "project": "security",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "security",
+      "class": "marker",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "security"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "Security",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}

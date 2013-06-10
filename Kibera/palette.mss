@@ -75,19 +75,19 @@ Map { font-directory: url(./fonts); }
 @standard_case:     @pedestrian_line; //@land * 0.9;
 
 // STYLEGROUP
-@motorway_line:     #f1a089; //#E65C5C;
+@motorway_line:     #f1896c;
 @motorway_fill:     lighten(@motorway_line,10%);
 @motorway_case:     @motorway_line * 0.9;
 
-@mainroad_line:     #f1a089; //#f1a089939; //#FFC859;
+@mainroad_line:     #f1896c;
 @mainroad_fill:     lighten(@mainroad_line,10%);
 @mainroad_case:     @mainroad_line * 0.9;
 
-@minorroad_line:    #eeb373; //#ec8907; //#FFE873;
+@minorroad_line:    #eba151;
 @minorroad_fill:    lighten(@minorroad_line,10%);
 @minorroad_case:    @minorroad_line * 0.9;
 
-@service_line:      @minorroad_line; //#FFE873;
+@service_line:      @minorroad_line;
 @service_fill:      @minorroad_fill;
 @service_case:      @minorroad_case;
 
@@ -99,7 +99,7 @@ Map { font-directory: url(./fonts); }
 @cycle_fill:        #FAFAF5;
 @cycle_case:        @land;
 
-@rail_line:         #c14545; //#c64242; //#999;
+@rail_line:         #c14545;
 @rail_fill:         @rail_line; //#fff;
 @rail_case:         @rail_line; //@land;
 

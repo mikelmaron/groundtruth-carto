@@ -198,7 +198,7 @@ Map { background-color: @land; } //@water; }
 
 
 //@kibera: #fff0f9; //purple
-@kibera: #FFFAEC; //yellow
+@kibera: #FFFADF; //yellow
 @highlight: darken(@kibera, 20);
 
 /*

@@ -42,4 +42,3 @@ GROUP BY religion;
   [religion = 'jewish']{point-file: url('../markers/jew.svg');}
   [religion = 'hindu']{point-file: url('../markers/hindu.svg');}
 }
-

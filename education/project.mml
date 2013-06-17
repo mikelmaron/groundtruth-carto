@@ -12,13 +12,12 @@
   ],
   "format": "png",
   "interactivity": {
-    "layer": "",
+    "layer": "edu",
     "template_teaser": "<style>\n.wax-tooltip .name {\n  font-size: 18pt;\n  padding: 4px 0px 8px 0px;\n  border-bottom: 2px solid #ccc;\n}\n</style>\n\n\n<div class='name'>{{{name}}}</div>\n\n<div class='description'>{{{amenity}}}, {{{education:type}}}</div>\n",
     "fields": [
       "name",
       "amenity",
-      "education:type",
-      "osm_id"
+      "education:type"
     ]
   },
   "minzoom": 11,

@@ -54,14 +54,14 @@ more than just automobile routes - railways, footways, and cycleways
 come in as well.
 
 /* Road width variables that are used in road & bridge styles */
-@rdz11_maj: 1.6; @rdz11_med: 0.8; @rdz11_min: 0.4;
-@rdz12_maj: 2.5; @rdz12_med: 1.2; @rdz12_min: 0.8;
-@rdz13_maj: 3;   @rdz13_med: 1.5; @rdz13_min: 1;
-@rdz14_maj: 4;   @rdz14_med: 2.5; @rdz14_min: 1.6;
-@rdz15_maj: 6;   @rdz15_med: 4;   @rdz15_min: 2;
-@rdz16_maj: 8;   @rdz16_med: 6;   @rdz16_min: 4;
-@rdz17_maj: 14;  @rdz17_med: 12;  @rdz17_min: 10;
-@rdz18_maj: 20;  @rdz18_med: 17;  @rdz18_min: 14;
+@rdz11_maj: 1;     @rdz11_med: 0.5;   @rdz11_min: 0.4;
+@rdz12_maj: 1.5;   @rdz12_med: 0.6;   @rdz12_min: 0.8;
+@rdz13_maj: 2;     @rdz13_med: 1;     @rdz13_min: 1;
+@rdz14_maj: 2.6;   @rdz14_med: 2;     @rdz14_min: 1.6;
+@rdz15_maj: 4;     @rdz15_med: 2.6;   @rdz15_min: 2.5;
+@rdz16_maj: 5;     @rdz16_med: 4.5;   @rdz16_min: 4;
+@rdz17_maj: 8;     @rdz17_med: 6;     @rdz17_min: 8;
+@rdz18_maj: 12;    @rdz18_med: 10;    @rdz18_min: 12;
 
 /* ---- Casing ----------------------------------------------- */
 
@@ -70,12 +70,11 @@ come in as well.
 #bridge[render='1_outline'][zoom>=11][zoom<=20]{
   /* -- colors & styles -- */
   line-cap: round;
-  [bridge=1],
-  [tunnel=1] {
+  [bridge=1],[tunnel=1] {
     line-cap: butt;
   }
   line-join: round;
-  line-color: @standard_case;
+  line-color: darken(@standard_case, 15%);
   [bridge=1] { line-color: @standard_case * 0.8; }
   [type='motorway'],
   [type='motorway_link'] {
@@ -97,11 +96,29 @@ come in as well.
     line-color: @secondary_case;
     [bridge=1] { line-color: @secondary_case * 0.8; }
   }
+  [stylegroup='noauto'] {
+    line-color: @pedestrian_case;
+    line-cap: butt;
+    }
+  [stylegroup='footway'] {
+    line-color: @footway;
+    line-cap: butt;
+    line-dasharray: 1,1;
+    }
+  [stylegroup='steps'] {
+    line-color: @steps;
+    line-cap: butt;
+    }
   [stylegroup='railway'] {
     line-color: fadeout(@land,50%);
     [bridge=1] { line-color: @secondary_case * 0.8; }
   }
-  [tunnel=1] { line-dasharray: 3,3; }        
+  [tunnel=1] { 
+    [zoom = 15] { line-dasharray: 1.5, 1.5;   } 
+    [zoom = 16] { line-dasharray: 2,   2.5; } 
+    [zoom = 17] { line-dasharray: 2.5, 3;   } 
+    [zoom = 18] { line-dasharray: 4,   5;   } 
+  }
   /* -- widths -- */
   [zoom=11] {
     [stylegroup='motorway'] { line-width: @rdz11_maj + 2; }
@@ -110,6 +127,8 @@ come in as well.
     /* No minor bridges yet */
     [stylegroup='service']  { line-width: 0; }
     [stylegroup='noauto']   { line-width: 0; }
+    [stylegroup='footway']  { line-width: 0; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 0; }
   }
   [zoom=12] {
@@ -119,40 +138,50 @@ come in as well.
     /* No minor bridges yet */
     [stylegroup='service']  { line-width: 0; }
     [stylegroup='noauto']   { line-width: 0; }
+    [stylegroup='footway']  { line-width: 0; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 0; }
   }
   [zoom=13] {
     [stylegroup='motorway'] { line-width: @rdz13_maj + 2; }
     [stylegroup='mainroad'] { line-width: @rdz13_med + 2; }
-    [stylegroup='minorroad']{ line-width: @rdz13_min + 2; }
+    [stylegroup='minorroad']{ line-width: @rdz13_min + 1; }
     /* No minor bridges yet */
-    [stylegroup='service']  { line-width: 0; }
-    [stylegroup='noauto']   { line-width: 0; }
+    [stylegroup='service']  { line-width: 0.5; }
+    [stylegroup='noauto']   { line-width: 0.5; line-color: lighten(@pedestrian_case, 6%); }
+    [stylegroup='footway']  { line-width: 0.5; line-color: lighten(@footway, 10%); }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 0; }
   }
   [zoom=14] {
     [stylegroup='motorway'] { line-width: @rdz14_maj + 2; }
     [stylegroup='mainroad'] { line-width: @rdz14_med + 2; }
-    [stylegroup='minorroad']{ line-width: @rdz14_min + 2; }
+    [stylegroup='minorroad']{ line-width: @rdz14_min + 1; }
     /* No minor bridges yet */
-    [stylegroup='service']  { line-width: 0; }
-    [stylegroup='noauto']   { line-width: 0; }
+    [stylegroup='service']  { line-width: 1; }
+    [stylegroup='noauto']   { line-width: 1; line-color: lighten(@pedestrian_case, 6%); }
+    [stylegroup='footway']  { line-width: 1; line-color: lighten(@footway, 10%); }
+    [stylegroup='steps']    { line-width: 0.5; }
     [stylegroup='railway']  { line-width: 0; }
   }
   [zoom=15] {
     [stylegroup='motorway'] { line-width: @rdz15_maj + 2.5; }
     [stylegroup='mainroad'] { line-width: @rdz15_med + 2; }
-    [stylegroup='minorroad']{ line-width: @rdz15_min + 2; }
-    [stylegroup='service']  { line-width: @rdz15_min / 3 + 2; }
-    [stylegroup='noauto']   { line-width: @rdz15_min / 4 + 2; }
+    [stylegroup='minorroad']{ line-width: @rdz15_min + 1.5; }
+    [stylegroup='service']  { line-width: @rdz15_min / 3 + 1; }
+    [stylegroup='noauto']   { line-width: @rdz15_min / 4 + 1; line-color: lighten(@pedestrian_case, 6%); }
+    [stylegroup='footway']  { line-width: @rdz15_min / 4 + 1; line-color: lighten(@footway, 10%); }
+    [stylegroup='steps']    { line-width: 2; line-dasharray: 1,1; }
     [stylegroup='railway']  { line-width: 1.5 + 2; }
   }
   [zoom=16] {
     [stylegroup='motorway'] { line-width: @rdz16_maj + 2.5; }
     [stylegroup='mainroad'] { line-width: @rdz16_med + 2.5; }
     [stylegroup='minorroad']{ line-width: @rdz16_min + 2; }
-    [stylegroup='service']  { line-width: @rdz16_min / 3 + 2; }
-    [stylegroup='noauto']   { line-width: @rdz16_min / 4 + 2; }
+    [stylegroup='service']  { line-width: @rdz16_min / 3 + 1.5; }
+    [stylegroup='noauto']   { line-width: @rdz16_min / 4 + 1.5; }
+    [stylegroup='footway']  { line-width: @rdz16_min / 4 + 1.5; }
+    [stylegroup='steps']    { line-width: 3; line-dasharray: 1,1; }
     [stylegroup='railway']  { line-width: 2 + 2; }
   }
   [zoom>=17] {
@@ -160,7 +189,9 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz17_med + 2.5; }
     [stylegroup='minorroad']{ line-width: @rdz17_min + 2; }
     [stylegroup='service']  { line-width: @rdz17_min / 3 + 2; }
-    [stylegroup='noauto']   { line-width: @rdz17_min / 4 + 4; }
+    [stylegroup='noauto']   { line-width: @rdz17_min / 4 + 2; }
+    [stylegroup='footway']  { line-width: @rdz17_min / 4 + 2; }
+    [stylegroup='steps']    { line-width: 4; line-dasharray: 1,1.5; }
     [stylegroup='railway']  { line-width: 3 + 4; } // 3 + 4
   }
   [zoom>=18] {
@@ -168,11 +199,14 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz18_med + 4; }
     [stylegroup='minorroad']{ line-width: @rdz18_min + 3.5; }
     [stylegroup='service']  { line-width: @rdz18_min / 3 + 3.5; }
-    [stylegroup='noauto']   { line-width: @rdz18_min / 4 + 6; }
+    [stylegroup='noauto']   { line-width: @rdz18_min / 4 + 3; }
+    [stylegroup='footway']  { line-width: @rdz18_min / 4 + 3; }
+    [stylegroup='steps']    { line-width: 6; line-dasharray: 1.5,2; }
     [stylegroup='railway']  { line-width: 4 + 6; }
   }
 }
 
+/***************** FILL *************************/
 
 #roads_high[zoom>=11][zoom<=20],
 #tunnel[render='3_inline'][zoom>=11][zoom<=20],
@@ -207,8 +241,10 @@ come in as well.
   }
   [stylegroup='noauto'],
   [stylegroup='service'],
-  [stylegroup='minorroad'] {
+  [stylegroup='minorroad'],
+  [stylegroup='footway']{
     line-width: 0;
+    line-color: @pedestrian_fill;
   }
   [stylegroup='service'],
   [stylegroup='minorroad'],
@@ -219,6 +255,10 @@ come in as well.
   }
   [stylegroup='noauto'] {
     line-join: round;
+    line-cap: butt;
+  }
+  [stylegroup='steps'] { 
+    line-width: 0; 
   }
   [tunnel=1] {
     line-cap: butt;
@@ -228,20 +268,25 @@ come in as well.
     [stylegroup='motorway'] { line-width: @rdz11_maj; }
     [stylegroup='mainroad'] { line-width: @rdz11_med; }
     [stylegroup='minorroad']{ line-width: 0; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 0.2; }
+    
   }
   [zoom=12] {
     [stylegroup='motorway'] { line-width: @rdz12_maj; }
     [stylegroup='mainroad'] { line-width: @rdz12_med; }
     [stylegroup='minorroad']{ line-width: 0; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 0.4; }
+    
   }
   [zoom=13] {
     [stylegroup='motorway'] { line-width: @rdz13_maj; }
     [stylegroup='mainroad'] { line-width: @rdz13_med; }
     [stylegroup='minorroad']{ line-width: @rdz13_min; }
     [stylegroup='service']  { line-width: @rdz13_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz13_min / 4; line-dasharray: 1,1; }
+    [stylegroup='noauto']   { line-width: @rdz13_min / 4; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 0.8; }
   }
   [zoom=14] {
@@ -249,7 +294,9 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz14_med; }
     [stylegroup='minorroad']{ line-width: @rdz14_min; }
     [stylegroup='service']  { line-width: @rdz14_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz14_min / 4; line-dasharray: 1,1; }
+    [stylegroup='noauto']   { line-width: 0; }//@rdz14_min / 4; }
+    [stylegroup='footway']  { line-width: 0; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 1; }
   }
   [zoom=15] {
@@ -257,7 +304,9 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz15_med; }
     [stylegroup='minorroad']{ line-width: @rdz15_min; }
     [stylegroup='service']  { line-width: @rdz15_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz15_min / 4; line-dasharray: 1,1; }
+    [stylegroup='noauto']   { line-width: 0; }//@rdz15_min / 4; }
+    [stylegroup='footway']  { line-width: 0; }//@rdz15_min / 4; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 1.5; }
   }
   [zoom=16] {
@@ -265,7 +314,9 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz16_med; }
     [stylegroup='minorroad']{ line-width: @rdz16_min; }
     [stylegroup='service']  { line-width: @rdz16_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz16_min / 4; line-dasharray: 2,1; }
+    [stylegroup='noauto']   { line-width: @rdz16_min / 4; }
+    [stylegroup='footway']  { line-width: @rdz16_min / 4; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 2; }
   }
   [zoom=17] {
@@ -273,7 +324,9 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz17_med; }
     [stylegroup='minorroad']{ line-width: @rdz17_min; }
     [stylegroup='service']  { line-width: @rdz17_min / 3; }
-    [stylegroup='noauto']   { line-width: @rdz17_min / 4; line-dasharray: 2,2; }
+    [stylegroup='noauto']   { line-width: @rdz17_min / 4; }
+    [stylegroup='footway']  { line-width: @rdz17_min / 4; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 3; }
   }
   [zoom>=18] {
@@ -281,17 +334,20 @@ come in as well.
     [stylegroup='mainroad'] { line-width: @rdz18_med; }
     [stylegroup='minorroad']{ line-width: @rdz18_min; }
     [stylegroup='service']  { line-width: @rdz18_min / 2; }
-    [stylegroup='noauto']   { line-width: @rdz18_min / 4; line-dasharray: 3,3; }
+    [stylegroup='noauto']   { line-width: @rdz18_min / 4; }
+    [stylegroup='footway']  { line-width: @rdz18_min / 4; }
+    [stylegroup='steps']    { line-width: 0; }
     [stylegroup='railway']  { line-width: 4; }
   }
 }
 
 /* ---- Bridge fill for dashed lines -------------------------------- */
+
 #tunnel[render='2_line'][zoom>=14][zoom<=20],
 #bridge[render='2_line'][zoom>=14][zoom<=20]{
-  /* -- colors & styles -- */
-  [stylegroup='noauto'] {
-    line-color: @land;
+  // -- colors & styles -- 
+  [stylegroup='noauto'],[stylegroup='footway'] {
+    line-color: @land; //@footway;
     line-width: 0;
     line-join: round;
   }
@@ -299,25 +355,30 @@ come in as well.
     line-color: @land;
     line-join: round;
   }
-  /* -- widths -- */
+  // -- widths -- 
   [zoom=14] {
+    [stylegroup='footway'],
     [stylegroup='noauto']   { line-width: @rdz14_min / 4 + 1; }
     [stylegroup='railway']  { line-width: 1 + 1; }
   }
   [zoom=15] {
-    [stylegroup='noauto']   { line-width: @rdz15_min / 4 + 1; }
+    [stylegroup='footway'],
+    [stylegroup='noauto']   { line-width: @rdz15_min / 4; }// + 1; line-dasharray: 1,2; }
     [stylegroup='railway']  { line-width: 1.5 + 1; }
   }
   [zoom=16] {
-    [stylegroup='noauto']   { line-width: @rdz16_min / 4 + 1; }
+    [stylegroup='footway'],
+    [stylegroup='noauto']   { line-width: @rdz16_min / 4; }// + 1; line-dasharray: 1,2; }
     [stylegroup='railway']  { line-width: 2 + 1; }
   }
   [zoom=17] {
-    [stylegroup='noauto']   { line-width: @rdz17_min / 4 + 3; }
+    [stylegroup='footway'],
+    [stylegroup='noauto']   { line-width: @rdz17_min / 4; }// + 2; line-dasharray: 1.5,2.5; }
     [stylegroup='railway']  { line-width: 3 + 2; }
   }
   [zoom>=18] {
-    [stylegroup='noauto']   { line-width: @rdz18_min / 4 + 3; }
+    [stylegroup='footway'],
+    [stylegroup='noauto']   { line-width: @rdz18_min / 4; }// + 2; line-dasharray: 2,3; }
     [stylegroup='railway']  { line-width: 4 + 3; }
   }
 }

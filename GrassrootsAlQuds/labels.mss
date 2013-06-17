@@ -11,6 +11,10 @@
    function in the text-name parameter by replacing each character
    with itself followed by one or more spaces. */
 
+/* JLC-IMPORTANT: all labels are set to default to english name tag, 
+   then if null to regular name tag.
+   SELECT COALESCE("name:en",name) AS name */ 
+
 /* ================================================================== */
 /* PLACE NAMES
 /* ================================================================== */

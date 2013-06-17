@@ -18,7 +18,7 @@
 /* ================================================================== */
 
 /* directory to load fonts from in addition to the system directories */
-Map { font-directory: url(./fonts); }
+Map { font-directory: url(./fonts); buffer-size: 200;}
 
 /* set up font sets for various weights and styles */
 @sans_lt:           "Open Sans Regular","DejaVu Sans Book","unifont Medium";
@@ -51,10 +51,13 @@ Map { font-directory: url(./fonts); }
 @school:            #FFF5CC;
 @sports:            #B8E6B8;
 
-@residential:       @land * 0.98;
+@residential:       #faf7ee; //@land * 0.98;
 @commercial:        @land * 0.97;
 @industrial:        @land * 0.96;
 @parking:           #EEE;
+
+@village_green:     #f7f6e8;
+@walls:             #BBB;
 
 /* ================================================================== */
 /* ROAD COLORS
@@ -91,7 +94,12 @@ Map { font-directory: url(./fonts); }
 
 @pedestrian_line:   @standard_line;
 @pedestrian_fill:   #FAFAF5;
-@pedestrian_case:   @land;
+@pedestrian_case:   #cacaca;
+
+@footway:           #dab26c;
+
+@steps:             #aaa;
+
 
 @cycle_line:        @standard_line;
 @cycle_fill:        #FAFAF5;
@@ -145,6 +153,3 @@ Map { font-directory: url(./fonts); }
 @village_halo:      @place_halo;
 
 /* ****************************************************************** */
-
-
-

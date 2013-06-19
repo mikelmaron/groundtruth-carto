@@ -1,9 +1,9 @@
 {
   "bounds": [
-    34.9582,
-    31.6501,
-    35.3454,
-    31.8626
+    35.1369,
+    31.7333,
+    35.2993,
+    31.8194
   ],
   "center": [
     35.2259,
@@ -13,10 +13,15 @@
   "format": "png",
   "interactivity": {
     "layer": "tourism",
-    "template_teaser": "<div class='name'>{{{name}}}</div>\n<div class='tourism'>{{{tourism}}}</div>\n\n<style>\n  .wax-tooltip {\n    background-color: #faf7f3;\n    width: 220px !important;\n    font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  }\n\n  .wax-tooltip div {\n    padding-top: 2px;\n    padding-left: 4px;\n    padding-bottom: 2px;\n  }\n\n  .wax-tooltip .name {\n    font-size: 18pt;\n    font-weight: 500;\n    color: #624d15;\n    border-bottom: 2px solid #cbc4b3;\n  }\n\n  .wax-tooltip .tourism {\n    font-size: 12pt;\n    font-weight: 600;\n    color: #666666;\n  }\n</style>"
+    "template_teaser": "<div class='name'>{{{name}}}</div>\n<div class='tourism'>{{{tourism}}}</div>\n\n<style>\n  .wax-tooltip {\n    background-color: #faf7f3;\n    width: 220px !important;\n    font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  }\n\n  .wax-tooltip div {\n    padding-top: 2px;\n    padding-left: 4px;\n    padding-bottom: 2px;\n  }\n\n  .wax-tooltip .name {\n    font-size: 18pt;\n    font-weight: 500;\n    color: #624d15;\n    border-bottom: 2px solid #cbc4b3;\n  }\n\n  .wax-tooltip .tourism {\n    font-size: 12pt;\n    font-weight: 600;\n    color: #666666;\n  }\n</style>",
+    "fields": [
+      "name",
+      "tourism",
+      "osm_id"
+    ]
   },
-  "minzoom": 13,
-  "maxzoom": 18,
+  "minzoom": 14,
+  "maxzoom": 17,
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
   "Stylesheet": [
     "palette.mss",
@@ -26,17 +31,6 @@
     "old_city.mss"
   ],
   "Layer": [
-    {
-      "Datasource": {
-        "file": "http://tilemill-data.s3.amazonaws.com/osm/coastline-good.zip"
-      },
-      "class": "shp",
-      "geometry": "polygon",
-      "id": "processed_p",
-      "name": "processed_p",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "srs-name": "900913"
-    },
     {
       "extent": [
         34.94311645050251,

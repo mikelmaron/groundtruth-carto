@@ -129,9 +129,9 @@
 #tourism {
   point-file: url('../markers/tourism.svg');
   point-allow-overlap: true;
-  [zoom <= 14]{point-transform:"scale(0.5) translate(0,-6)";}
-  [zoom = 15]{point-transform:"scale(0.7) translate(0,-8)";}
-  [zoom = 16]{point-transform:"scale(0.8) translate(0,-10)";}
+  [zoom <= 14]{point-transform:"scale(0.5) translate(0,-8)";}
+  [zoom = 15]{point-transform:"scale(0.7) translate(0,-10)";}
+  [zoom = 16]{point-transform:"scale(0.8) translate(0,-11)";}
   [zoom = 17]{point-transform:"scale(0.9) translate(0,-12)";}
   [zoom >= 18]{point-transform:"scale(1) translate(0,-14)";}
 }

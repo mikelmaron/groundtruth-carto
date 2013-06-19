@@ -18,7 +18,7 @@
 /* ================================================================== */
 
 /* directory to load fonts from in addition to the system directories */
-Map { font-directory: url(./fonts); buffer-size: 200;}
+Map { font-directory: url(./fonts); buffer-size: 200; background-color:@land; }
 
 /* set up font sets for various weights and styles */
 @sans_lt:           "Open Sans Regular","DejaVu Sans Book","unifont Medium";

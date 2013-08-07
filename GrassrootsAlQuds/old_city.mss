@@ -113,27 +113,3 @@
   [zoom >= 18]{ line-width: 5; }
 }
 */
-
-#tourism::bottom-shadow{
-  marker-allow-overlap: true;
-  marker-fill: black;
-  marker-opacity:0.6;
-  image-filters:agg-stack-blur(4,2);
-  [zoom = 4]{marker-width:6; marker-height:2;}
-  [zoom = 5]{marker-width:8; marker-height:2;}
-  [zoom = 6]{marker-width:12; marker-height:2;}
-  [zoom = 7]{marker-width:14; marker-height:3;}
-  [zoom >= 8]{marker-width:20; marker-height:4;}
-  }
-
-#tourism {
-  point-file: url('../markers/tourism.svg');
-  point-allow-overlap: true;
-  [zoom <= 14]{point-transform:"scale(0.5) translate(0,-8)";}
-  [zoom = 15]{point-transform:"scale(0.7) translate(0,-10)";}
-  [zoom = 16]{point-transform:"scale(0.8) translate(0,-11)";}
-  [zoom = 17]{point-transform:"scale(0.9) translate(0,-12)";}
-  [zoom >= 18]{point-transform:"scale(1) translate(0,-14)";}
-}
-
-

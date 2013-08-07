@@ -28,7 +28,8 @@
     "base.mss",
     "roads.mss",
     "labels.mss",
-    "old_city.mss"
+    "old_city.mss",
+    "marker.mss"
   ],
   "Layer": [
     {
@@ -543,12 +544,15 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(SELECT osm_id, name, tourism, way\nFROM planet_osm_point\nWHERE tourism IS NOT NULL)AS data",
+        "table": "(SELECT osm_id, name, tourism, way\nFROM planet_osm_point\nWHERE tourism IN ('viewpoint', 'hotel', 'museum', 'artwork', 'attraction', 'hostel', 'information'))\nAS data",
         "key_field": "osm_id",
         "geometry_field": "way",
         "extent_cache": "auto",
         "extent": "3884709.53,3697796.57,3935853.1,3746367.24",
-        "dbname": "al_quds"
+        "dbname": "al_quds",
+        "id": "tourism",
+        "project": "GrassrootsAlQuds",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
       },
       "id": "tourism",
       "class": "marker",

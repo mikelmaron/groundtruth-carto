@@ -12,8 +12,8 @@
   ],
   "format": "png",
   "interactivity": {
-    "layer": "",
-    "template_teaser": "ID: {{{osm_id}}} <br>\nNAME: {{{name}}} <br>\nAMENITY: {{{amenity}}} <br>\nSHOP: {{{shop}}} <br>\nSEC_LIGHT: {{{security:light}}} <br>\nSEC_BAR: {{{security:bar}}} <br>\nSEC_HATARI: {{{security:hatari_spot}}} <br>\nSEC_BLACK_SPOT: {{{security:black_spot}}} <br>\nSEC_OTHER: {{{security:other}}} <br>\nSEC_GBV: {{{security:gbv_support}}} <br>\nSEC_CHIEF: {{{security:chiefs_camp}}}",
+    "layer": "security",
+    "template_teaser": "<style>\n.wax-tooltip .name {\n  font-size: 18pt;\n  padding: 4px 0px 8px 0px;\n  border-bottom: 2px solid #ccc;\n}\n</style>\n\n\n<div class='name'>{{{name}}}</div>\n\n<div class='description'>{{{amenity}}}</div>\n",
     "fields": [
       "osm_id",
       "name",

@@ -1,6 +1,7 @@
-.marker {
-  [zoom < 15]{point-transform:"scale(0)"; marker-width: 0;}
-  [zoom = 15]{point-transform:"scale(0.1)"; marker-width: 10;}
+.marker [zoom >= 13]{
+  [zoom = 13]{point-transform:"scale(0.04)"; marker-width: 4;}
+  [zoom = 14]{point-transform:"scale(0.06)"; marker-width: 6;}
+  [zoom = 15]{point-transform:"scale(0.08)"; marker-width: 8;}
   [zoom = 16]{point-transform:"scale(0.1)"; marker-width: 10;}
   [zoom = 17]{point-transform:"scale(0.15)"; marker-width: 14;}
   [zoom >= 18]{point-transform:"scale(0.2)"; marker-width: 18;}
@@ -30,11 +31,11 @@
    499 | toilets
      1 | public_building
 */
-#watsan ["watsan:toilet_public"='yes'],
-#watsan ["watsan:toilet_private"='yes'],
-#watsan ["watsan:pee_point"='yes'],
-#watsan ["watsan:bathroom"='yes'],
-#watsan [amenity='toilets']{
+#watsan ["watsan:toilet_public"='yes'][zoom >= 13],
+#watsan ["watsan:toilet_private"='yes'][zoom >= 13],
+#watsan ["watsan:pee_point"='yes'][zoom >= 13],
+#watsan ["watsan:bathroom"='yes'][zoom >= 13],
+#watsan [amenity='toilets'][zoom >= 13]{
   point-file:url('../markers/toilet.svg');
 }
 
@@ -46,9 +47,9 @@
    743 | drinking_water
      4 | toilets
 */
-#watsan ["watsan:water_public"='yes'],
-#watsan ["watsan:water_private"='yes'],
-#watsan [amenity='drinking_water']{
+#watsan ["watsan:water_public"='yes'][zoom >= 13],
+#watsan ["watsan:water_private"='yes'][zoom >= 13],
+#watsan [amenity='drinking_water'][zoom >= 13]{
   point-file:url('../markers/water.svg');
 }
 
@@ -61,10 +62,10 @@
     13 | toilets
     45 | waste_disposal
 */
-#watsan ["watsan:biocentre"='yes'],
-#watsan ["watsan:dumping_site"='yes'],
-#watsan ["watsan:recycling"='yes'],
-#watsan [amenity='recycling']{
+#watsan ["watsan:biocentre"='yes'][zoom >= 13],
+#watsan ["watsan:dumping_site"='yes'][zoom >= 13],
+#watsan ["watsan:recycling"='yes'][zoom >= 13],
+#watsan [amenity='recycling'][zoom >= 13]{
   point-file:url('../markers/trash.svg');
 }
 
@@ -74,9 +75,9 @@
 // natural=water
 // other
 */
-#watsan ["watsan:urban_agriculture"='yes'],
-#watsan ["watsan:other"='yes'],
-#watsan [man_made='water_tower'],
-#watsan ["natural"='water']{
+#watsan ["watsan:urban_agriculture"='yes'][zoom >= 13],
+#watsan ["watsan:other"='yes'][zoom >= 13],
+#watsan [man_made='water_tower'][zoom >= 13],
+#watsan ["natural"='water'][zoom >= 13]{
   point-file:url('../markers/trash.svg');
 }

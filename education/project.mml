@@ -17,7 +17,8 @@
     "fields": [
       "name",
       "amenity",
-      "education:type"
+      "education:type",
+      "osm_id"
     ]
   },
   "minzoom": 11,

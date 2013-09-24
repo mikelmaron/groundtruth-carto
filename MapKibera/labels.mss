@@ -16,7 +16,7 @@
 /* ================================================================== */
 
 #place::country[type='country'][zoom>3][zoom<9] {
-  text-name:'[name]';
+  text-name:[name];
   text-face-name:@sans_bold;
   text-placement:point;
   text-fill:@country_text;
@@ -51,7 +51,7 @@
 }
 
 #place::state[type='state'][zoom>=5][zoom<=10] {
-  text-name:'[name]';
+  text-name:[name];
   text-face-name:@sans_bold_italic;
   text-placement:point;
   text-fill:@state_text;
@@ -88,7 +88,7 @@
 /* ---- Cities ------------------------------------------------------ */
 
 #place::city[type='city'][zoom>=8][zoom<=15] {
-  text-name:'[name]';
+  text-name:[name];
   text-face-name:@sans;
   text-placement:point;
   text-fill:@city_text;
@@ -139,7 +139,7 @@
 /* ---- Towns ------------------------------------------------------- */
 
 #place::town[type='town'][zoom>=9][zoom<=17] {
-  text-name:'[name]';
+  text-name:[name];
   text-face-name:@sans;
   text-placement:point;
   text-fill:@town_text;
@@ -189,7 +189,7 @@
 #place::small[type='suburb'][zoom>=13],
 #place::small[type='hamlet'][zoom>=13],
 #place::small[type='neighbourhood'][zoom>=13] {
-  text-name:'[name]';
+  text-name:[name];
   text-face-name:@sans;
   text-placement:point;
   text-fill:@other_text;
@@ -230,7 +230,7 @@
 }
 
 #place::small[type='locality'][zoom>=15] {
-  text-name:'[name]';
+  text-name:[name];
   text-face-name:@sans;
   text-placement:point;
   text-fill:@locality_text;
@@ -270,7 +270,7 @@
   [zoom>=16][area>20000],
   [zoom>=17][area>5000],
   [zoom>=18][area>=0] {
-    text-name: "[name]";
+    text-name: [name];
     text-halo-radius: 1.5;
     text-face-name:@sans;
     text-size: 11;
@@ -310,7 +310,7 @@
   [zoom=16][area>80000],
   [zoom=17][area>20000],
   [zoom=18][area>5000] {
-    text-name: "[name]";
+    text-name: [name];
     text-size: 13;
     text-wrap-width: 60;
     text-character-spacing: 1;
@@ -335,7 +335,7 @@
 #poi[type='hospital'][zoom>=16],
 #poi[type='school'][zoom>=17],
 #poi[type='library'][zoom>=17] {
-  text-name:"[name]";
+  text-name:[name];
   text-face-name:@sans;
   text-size:10;
   text-wrap-width:30;
@@ -350,7 +350,7 @@
 #waterway_label[type='river'][zoom>=13],
 #waterway_label[type='canal'][zoom>=15],
 #waterway_label[type='stream'][zoom>=17] {
-  text-name: '[name]';
+  text-name: [name];
   text-face-name: @sans_italic;
   text-fill: @water * 0.75;
   text-halo-fill: fadeout(lighten(@water,5%),25%);
@@ -361,17 +361,17 @@
   [type='river'][zoom=14],
   [type='canal'][zoom=16],
   [type='stream'][zoom=18] {
-    text-name: "[name].replace('([\S\ ])','$1 ')";
+    //text-name: "[name].replace('([\S\ ])','$1 ')";
   }
   [type='river'][zoom=15],
   [type='canal'][zoom=17] {
     text-size: 11;
-    text-name: "[name].replace('([\S\ ])','$1 ')";
+    //text-name: "[name].replace('([\S\ ])','$1 ')";
   }
   [type='river'][zoom>=16],
   [type='canal'][zoom=18] {
     text-size: 14;
-    text-name: "[name].replace('([\S\ ])','$1 ')";
+    //text-name: "[name].replace('([\S\ ])','$1 ')";
     text-spacing: 300;
   }
 }
@@ -430,7 +430,7 @@
 #mainroad_label[type='primary'][zoom>12],
 #mainroad_label[type='secondary'][zoom>13],
 #mainroad_label[type='tertiary'][zoom>13] {
-  text-name:'[name]';
+  text-name:[name];
   text-face-name:@sans;
   text-placement:line;
   text-fill:@road_text;
@@ -441,7 +441,7 @@
 }
 
 #minorroad_label[zoom>14] {
-  text-name:'[name]';
+  text-name:[name];
   text-face-name:@sans;
   text-placement:line;
   text-size:9;

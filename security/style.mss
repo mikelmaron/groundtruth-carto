@@ -26,13 +26,14 @@ amenity IN ('bar', 'pub', 'police') OR shop='alcohol'
 
 //   --default to question mark
 #security [zoom >= 13]{
-  point-file:url('../markers/question.svg');
+  point-opacity: 0;
   }
 
 
 //   --LIGHT--
 #security ["security:light"='yes'][zoom >= 13]{
   point-file:url('../markers/light.svg');
+  point-opacity: 1;
   }
 
 
@@ -40,6 +41,7 @@ amenity IN ('bar', 'pub', 'police') OR shop='alcohol'
 #security ["security:hatari_spot"='yes'][zoom >= 13],
 #security ["security:black_spot"='yes'][zoom >= 13]{
   point-file:url('../markers/danger.svg');
+  point-opacity: 1;
   }
 
 
@@ -49,6 +51,7 @@ amenity IN ('bar', 'pub', 'police') OR shop='alcohol'
 #security ['amenity'='pub'][zoom >= 13],
 #security ['shop'='alcohol'][zoom >= 13] {
   point-file:url('../markers/bottle.svg');
+  point-opacity: 1;
   }
 
 
@@ -56,12 +59,14 @@ amenity IN ('bar', 'pub', 'police') OR shop='alcohol'
 #security ["security:chiefs_camp"='yes'][zoom >= 13],
 #security [amenity='police'][zoom >= 13]{
   point-file:url('../markers/police.svg');
+  point-opacity: 1;
   }
 
 
 //  --GENDER BASED VIOLENCE--
 #security ["security:gbv_support"='yes'][zoom >= 13]{
   point-file:url('../markers/gender_based_violence_support.svg');
+  point-opacity: 1;
   }
 
 

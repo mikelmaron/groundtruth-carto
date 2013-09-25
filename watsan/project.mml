@@ -13,7 +13,13 @@
   "format": "png",
   "interactivity": {
     "layer": "watsan",
-    "template_teaser": "<style>\n.wax-tooltip .name {\n  font-size: 18pt;\n  padding: 4px 0px 8px 0px;\n  border-bottom: 2px solid #ccc;\n}\n</style>\n\n\n<div class='name'>{{{name}}}</div>\n\n<div class='description'>{{{amenity}}} {{{natural}}}</div>\n"
+    "template_teaser": "<style>\n.wax-tooltip .name {\n  font-size: 18pt;\n  padding: 4px 0px 8px 0px;\n  border-bottom: 2px solid #ccc;\n}\n</style>\n\n\n<div class='name'>{{{name}}}</div>\n\n<div class='description'>{{{amenity}}} {{{natural}}}</div>\n",
+    "fields": [
+      "name",
+      "amenity",
+      "natural",
+      "osm_id"
+    ]
   },
   "minzoom": 11,
   "maxzoom": 18,

@@ -18,6 +18,7 @@
 // default
 #watsan {
   point-file:url('../markers/toilet.svg');
+  point-opacity: 0;
   }
 
 /*   --TOILET--
@@ -37,6 +38,7 @@
 #watsan ["watsan:bathroom"='yes'][zoom >= 13],
 #watsan [amenity='toilets'][zoom >= 13]{
   point-file:url('../markers/toilet.svg');
+  point-opacity: 1;
 }
 
 /*  --WATER--
@@ -51,6 +53,7 @@
 #watsan ["watsan:water_private"='yes'][zoom >= 13],
 #watsan [amenity='drinking_water'][zoom >= 13]{
   point-file:url('../markers/water.svg');
+  point-opacity: 1;
 }
 
 /*  --trash--
@@ -67,6 +70,7 @@
 #watsan ["watsan:recycling"='yes'][zoom >= 13],
 #watsan [amenity='recycling'][zoom >= 13]{
   point-file:url('../markers/trash.svg');
+  point-opacity: 1;
 }
 
 /*  --OTHER--
@@ -80,4 +84,5 @@
 #watsan [man_made='water_tower'][zoom >= 13],
 #watsan ["natural"='water'][zoom >= 13]{
   point-file:url('../markers/trash.svg');
+  point-opacity: 0;
 }

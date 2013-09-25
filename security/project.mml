@@ -15,17 +15,9 @@
     "layer": "security",
     "template_teaser": "<style>\n.wax-tooltip .name {\n  font-size: 18pt;\n  padding: 4px 0px 8px 0px;\n  border-bottom: 2px solid #ccc;\n}\n</style>\n\n\n<div class='name'>{{{name}}}</div>\n\n<div class='description'>{{{amenity}}}</div>\n",
     "fields": [
-      "osm_id",
       "name",
       "amenity",
-      "shop",
-      "security:light",
-      "security:bar",
-      "security:hatari_spot",
-      "security:black_spot",
-      "security:other",
-      "security:gbv_support",
-      "security:chiefs_camp"
+      "osm_id"
     ]
   },
   "minzoom": 11,
